@@ -61,9 +61,10 @@ header h1 img{
 header h2{
   margin: 0;
   font-weight: normal;
-  font-size: 1.3vw;
+  font-size: 1.6vw;
   font-family: 'Dayrom';
   bottom: 0;
+  align-self: flex-end;
 }
 
 nav ul {
@@ -87,7 +88,7 @@ nav a{
   color: black;
   text-transform: uppercase;
   font-family: 'Dayrom';
-  font-size: 1.3vw;
+  font-size: 1.6vw;
 }
 
 #banner{
@@ -133,28 +134,136 @@ button.article_link{
 
 img.article_link {
   max-height: 11px;
+  min-height: 3.5px;
   height: 1vw;
+}
+
+section{
+  margin: 2% 0;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-column-gap: 3%;
+  grid-template-areas:
+  "article article article article article aside aside"
+  "line line line line line line line "
+  ". . . arrow . . .";
+
+}
+
+article{
+  grid-area: article;
+}
+
+article #headline{
+  display: flex;
+}
+
+article h1{
+  font-family: 'Dayrom';
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0;
+  align-self: center;
+  font-size: 1.6vw;
+}
+
+article img{
+  max-height: 47px;
+  height: 3.5vw;
+}
+
+article p{
+  font-family: "Trebuchet MS";
+  word-spacing: 2px;
+  font-size: 1.2vw;
+}
+
+aside{
+  grid-area: aside;
+  color: white;
+  margin: 1%;
+}
+
+aside div#aside_content{
+  position: relative;
+  background-color: #706b64;
+  border-radius: 5px;
+  padding: 6%;
+}
+
+aside h1{
+  font-family: 'Dayrom';
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 1.1vw;
+  text-align: center;
+}
+
+aside img#zozor_picture{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-height: 120px;
+  height: 10vw;
+}
+
+aside img#arrow{
+  position: absolute;
+  left: -12px;
+  top: 15%;
+}
+
+aside p{
+  font-family: "Trebuchet MS";
+  font-size: 1.2vw;
+}
+
+aside ul{
+  padding: 0;
+  margin: 4% 0;
+  list-style: none;
+  text-align: center;
+}
+
+aside li{
+  display: inline-block;
+  margin: 0;
+  margin-right: 3px;
+}
+
+aside li img{
+  max-height: 41px;
+  height: 3.5vw;
+}
+
+section div#line{
+  grid-area: line;
+  margin-top: 2%;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-image: url('images/line.png') 42% round;
+}
+
+section input{
+  grid-area: arrow;
+  justify-self: center;
 }
 
 
 /*Set maximum font size*/
 @media screen and (min-width: 1200px){
-  header h1{
-    font-size: 30px;
-  }
-  header h2{
-    font-size: 16px;
-  }
-  nav a{
-    font-size: 16px;
-  }
-  .article_link{
-    font-size: 12px;
-  }
+  header h1{font-size: 36px}
+  header h2, nav a, article h1{font-size: 20px}
+  .article_link{font-size: 12px}
+  article p, aside p{font-size: 16px}
+  aside h1{font-size: 17px}
 }
-/*Adjust header headline margin for smaller screens to keep it at the same y positin as the navbar*/
-@media screen and (max-width: 414px){
-  header h2{
-    margin-top: 2.25%;
-  }
+
+/*Set minimum font size*/
+@media screen and (max-width: 450px){
+  header h1{font-size: 14px}
+  header h2, nav a, article h1{font-size: 8px}
+  .article_link{font-size: 5px}
+  article p, aside p{font-size: 6.5px}
+  aside h1{font-size: 7px}
 }
