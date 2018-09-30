@@ -69,7 +69,6 @@ header h2{
 
 nav ul {
   display: flex;
-  flex: 1 1 0;
   list-style: none;
   margin: 0;
 }
@@ -205,6 +204,7 @@ aside img#zozor_picture{
   display: block;
   max-height: 120px;
   height: 10vw;
+  border: 1px solid black;
 }
 
 aside img#arrow{
@@ -232,7 +232,7 @@ aside li{
 }
 
 aside li img{
-  max-height: 41px;
+  max-height: 35px;
   height: 3.5vw;
 }
 
@@ -247,23 +247,105 @@ section div#line{
 section input{
   grid-area: arrow;
   justify-self: center;
+  max-width: 54px;
+  min-width: 27px;
+  width: 4vw;
+}
+
+footer{
+  margin-bottom: 3%;
+}
+
+footer div#footer_content{
+  display: flex;
+  margin-right: 3%;
+}
+
+#footer_content div{
+  flex: 1 1 0;
+}
+
+footer h1{
+  font-family: 'Dayrom';
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 1.6vw;
+}
+
+footer p, footer a{
+  font-family: "Trebuchet MS";
+  font-size: 1.2vw;
+}
+
+div#gallery_preview{
+  margin-left: 1%;
+}
+
+div#gallery_preview ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+div#gallery_preview li{
+  flex: 1 1 0;
+}
+
+div#gallery_preview img{
+  border: 1px solid black;
+  max-height: 69px;
+  min-height: 34px;
+  height: 5vw;
+}
+
+div#friend_list h1{
+  margin-left: 10%;
+}
+
+div#friend_list ul{
+  list-style: none;
+  margin: 0;
+  margin-left: 6%;
+  padding: 0;
+  column-count: 2;
+}
+
+div#friend_list li{
+  position: relative;
+  display: flex;
+  margin: 3% auto;
+}
+
+div#friend_list a{
+  color: #760001;
+  text-decoration: none;
+  align-self: center;
+}
+
+div#friend_list img{
+  max-height: 9px;
+  min-height: 2px;
+  height: 0.8vw;
+  align-self: center;
 }
 
 
-/*Set maximum font size*/
+
+/*Set maximum font/background size*/
 @media screen and (min-width: 1200px){
   header h1{font-size: 36px}
-  header h2, nav a, article h1{font-size: 20px}
+  header h2, nav a, article h1, footer h1{font-size: 20px}
   .article_link{font-size: 12px}
-  article p, aside p{font-size: 16px}
+  article p, aside p, footer p, footer a{font-size: 16px}
   aside h1{font-size: 17px}
 }
 
-/*Set minimum font size*/
+/*Set minimum font/background size*/
 @media screen and (max-width: 450px){
   header h1{font-size: 14px}
-  header h2, nav a, article h1{font-size: 8px}
+  header h2, nav a, article h1, footer h1{font-size: 8px}
   .article_link{font-size: 5px}
-  article p, aside p{font-size: 6.5px}
+  article p, aside p, footer p, footer a{font-size: 6.5px}
   aside h1{font-size: 7px}
 }
